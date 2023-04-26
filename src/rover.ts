@@ -38,6 +38,12 @@ export class Rover {
       throw new Error("First command line must follow next structure: number, number, direction letter")
     }
 
+    const secondLine = lines[1]
+    const letterIsNotMovementLetter = secondLine.split("").some(letter => !["L","R","M"].includes(letter))
+    if(letterIsNotMovementLetter){
+      throw new Error("Letters from second line must contain L, R or M")
+    }
+
     this.map.max_x
     return commands
   }
