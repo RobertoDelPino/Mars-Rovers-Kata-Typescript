@@ -1,4 +1,5 @@
 import {Directions} from "./directions";
+import { Map } from "./map";
 
 export class Rover {
 
@@ -7,21 +8,22 @@ export class Rover {
   private parsedCommands: any;
   private y: number;
   private x: number;
+  private map: Map;
 
-  constructor() {
+  constructor(map: Map) {
     this.direction = Directions.North;
     this.parsedCommands = {};
     this.y = 0;
     this.x = 0;
+    this.map = map
   }
 
   parseCommands(commands: any) {
-
+    this.map.max_x
     return commands
   }
 
   execute(commands: any) {
-
     this.parsedCommands = this.parseCommands(commands);
 
 

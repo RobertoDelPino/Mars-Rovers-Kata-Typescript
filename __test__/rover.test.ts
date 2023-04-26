@@ -1,3 +1,4 @@
+import { Map } from '../src/map';
 import { Rover } from '../src/rover';
 
 /*
@@ -24,7 +25,10 @@ import { Rover } from '../src/rover';
 
 describe('Mars Rover test', () => {
   it('should be instantiated', () => {
-    const rover = new Rover();
+
+    const map = Map.createMap("5,5");
+
+    const rover = new Rover(map);
     expect(rover).toBeTruthy()
   });
 
