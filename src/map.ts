@@ -16,8 +16,11 @@ export class Map{
 
         this.notContainNumbers(separatedCoordinates)
         this.containNegativeNumbers(separatedCoordinates)
+
+        const x = parseInt(separatedCoordinates[0])
+        const y = parseInt(separatedCoordinates[1])
         
-        return new Map(0,0)
+        return new Map(x,y)
     }
 
     static containNegativeNumbers(separatedCoordinates: string[]){
