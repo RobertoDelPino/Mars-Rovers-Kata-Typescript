@@ -12,6 +12,6 @@ export class Map{
 
     static createMap(coordinates: string){
         console.log(coordinates);
-        throw new Error("Not implemented yet")
+        return new Map(0,0)
     }
 }
