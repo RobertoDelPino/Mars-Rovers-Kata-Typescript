@@ -14,18 +14,26 @@ export class Map{
         
         const separatedCoordinates = coordinates.split(",")
 
+        this.notContainNumbers(separatedCoordinates)
+        this.containNegativeNumbers(separatedCoordinates)
+        
+        return new Map(0,0)
+    }
+
+    static containNegativeNumbers(separatedCoordinates: string[]){
+
+        const result = separatedCoordinates.some(value => parseFloat(value) < 0) 
+        if(result){
+            throw new Error("Coordinate cannot contain negative numbers")
+        }
+    }
+
+    static notContainNumbers(separatedCoordinates: string[]){
         separatedCoordinates.forEach(coordinate => {
             const num = parseFloat(coordinate)
             if(isNaN(num)){
                 throw new Error(coordinate + " is not a number")
             }
-
-            if(num < 0){
-                throw new Error("Coordinate cannot contain negative numbers")
-            }
-            
         });
-        
-        return new Map(0,0)
     }
 }
