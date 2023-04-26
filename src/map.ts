@@ -14,14 +14,7 @@ export class Map{
         
         const separatedCoordinates = coordinates.split(",")
 
-        if(separatedCoordinates.length < 2){
-            throw new Error("Coordinate cannot contain less than two numbers")
-        }
-
-        if(separatedCoordinates.length > 2){
-            throw new Error("Coordinate cannot contain more than two numbers")
-        }
-
+        this.containTwoNumbers(separatedCoordinates)
         this.notContainNumbers(separatedCoordinates)
         this.containNegativeNumbers(separatedCoordinates)
 
@@ -29,6 +22,16 @@ export class Map{
         const y = parseInt(separatedCoordinates[1])
         
         return new Map(x,y)
+    }
+
+    static containTwoNumbers(separatedCoordinates: string[]){
+        if(separatedCoordinates.length < 2){
+            throw new Error("Coordinate cannot contain less than two numbers")
+        }
+
+        if(separatedCoordinates.length > 2){
+            throw new Error("Coordinate cannot contain more than two numbers")
+        }
     }
 
     static containNegativeNumbers(separatedCoordinates: string[]){
