@@ -27,4 +27,8 @@ describe("Map should", () => {
         expect(map.max_x).toBe(1)
         expect(map.max_y).toBe(2)
     })
+
+    it("throw error if coordinate contain more than two numbers", () => {
+        expect(() => Map.createMap("1,1,1")).toThrowError("Coordinate cannot contain more than two numbers")
+    })
 })
