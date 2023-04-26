@@ -31,4 +31,8 @@ describe("Map should", () => {
     it("throw error if coordinate contain more than two numbers", () => {
         expect(() => Map.createMap("1,1,1")).toThrowError("Coordinate cannot contain more than two numbers")
     })
+
+    it("throw error if coordinate contain less than two numbers", () => {
+        expect(() => Map.createMap("1")).toThrowError("Coordinate cannot contain less than two numbers")
+    })
 })
