@@ -84,6 +84,19 @@ describe('Mars Rover test', () => {
     expect(result).toEqual(expectedResult)
   })
 
+
+  it("should return expected result", () => {
+    const map = Map.createMap("5,5");
+
+    const rover = new Rover(map);
+
+    const expectedResult = "5 1 E"
+
+    const result = rover.execute("3,3,E|MMRMMRMRRM")
+
+    expect(result).toEqual(expectedResult)
+  })
+
 });
 
 
