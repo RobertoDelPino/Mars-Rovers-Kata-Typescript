@@ -18,12 +18,17 @@ export class Rover {
     this.map = map
   }
 
-  parseCommands(commands: any) {
+  parseCommands(commands: string) {
+
+    if(commands.trim() == ""){
+      throw new Error("Commands cannot be empty")
+    }
+
     this.map.max_x
     return commands
   }
 
-  execute(commands: any) {
+  execute(commands: string) {
     this.parsedCommands = this.parseCommands(commands);
 
 
