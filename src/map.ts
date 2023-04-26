@@ -12,7 +12,15 @@ export class Map{
 
     static createMap(coordinates: string){
         
-        console.log(coordinates);
+        const separatedCoordinates = coordinates.split(",")
+
+        separatedCoordinates.forEach(coordinate => {
+            const num = parseFloat(coordinate)
+            if(isNaN(num)){
+                throw new Error(coordinate + " is not a number")
+            }
+            
+        });
         
         return new Map(0,0)
     }
