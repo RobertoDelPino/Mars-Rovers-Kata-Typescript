@@ -19,6 +19,10 @@ export class Map{
             if(isNaN(num)){
                 throw new Error(coordinate + " is not a number")
             }
+
+            if(num < 0){
+                throw new Error("Coordinate cannot contain negative numbers")
+            }
             
         });
         
