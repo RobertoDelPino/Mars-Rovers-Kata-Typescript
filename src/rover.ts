@@ -28,6 +28,16 @@ export class Rover {
       throw new Error("Commands must contains just 2 lines")
     }
 
+    const firstLine = lines[0]
+    const lineSeparated = firstLine.split(",")
+    const xIsNotNumber = isNaN(parseInt(lineSeparated[0]))
+    const yIsNotNumber = isNaN(parseInt(lineSeparated[1]))
+    const directionIsNotCorrect = !["N", "W", "E", "S"].some(letter => letter == lineSeparated[2])
+    
+    if(xIsNotNumber || yIsNotNumber || directionIsNotCorrect){
+      throw new Error("First command line must follow next structure: number, number, direction letter")
+    }
+
     this.map.max_x
     return commands
   }
