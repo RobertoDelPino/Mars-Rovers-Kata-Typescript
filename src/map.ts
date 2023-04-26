@@ -14,6 +14,10 @@ export class Map{
         
         const separatedCoordinates = coordinates.split(",")
 
+        if(separatedCoordinates.length < 2){
+            throw new Error("Coordinate cannot contain less than two numbers")
+        }
+
         if(separatedCoordinates.length > 2){
             throw new Error("Coordinate cannot contain more than two numbers")
         }
