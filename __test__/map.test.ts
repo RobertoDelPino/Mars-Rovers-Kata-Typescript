@@ -17,4 +17,8 @@ describe("Map should", () => {
     it("throw error if coordinates are not numbers", () => {
         expect(() => Map.createMap("1,r")).toThrowError("r is not a number")
     })
+
+    it("throw error if x or y are less than 0", () => {
+        expect(() => Map.createMap("-1,1")).toThrowError("Coordinate cannot contain negative numbers")
+    })
 })
