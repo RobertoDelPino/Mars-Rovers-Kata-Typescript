@@ -19,7 +19,6 @@ export class Rover {
   }
 
   parseCommands(commands: string) {
-
     if(commands.trim() == ""){
       throw new Error("Commands cannot be empty")
     }
