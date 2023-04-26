@@ -13,4 +13,8 @@ describe("Map should", () => {
         const map = Map.createMap("1,2")
         expect(map).toBeTruthy()
     })
+
+    it("throw error if coordinates are not numbers", () => {
+        expect(() => Map.createMap("1,r")).toThrowError("r is not a number")
+    })
 })

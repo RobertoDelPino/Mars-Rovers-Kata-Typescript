@@ -11,7 +11,9 @@ export class Map{
     }
 
     static createMap(coordinates: string){
+        
         console.log(coordinates);
+        
         return new Map(0,0)
     }
 }
