@@ -46,7 +46,17 @@ export class Rover {
     }
 
     this.map.max_x
-    return commands
+
+    const result = {
+      starting_position : {
+        x: parseInt(lineSeparated[0]),
+        y: parseInt(lineSeparated[1]),
+        d: lineSeparated[2]
+      },
+      moving_command: secondLineSplit
+    }
+
+    return result
   }
 
   execute(commands: string) {
