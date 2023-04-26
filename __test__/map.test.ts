@@ -21,4 +21,10 @@ describe("Map should", () => {
     it("throw error if x or y are less than 0", () => {
         expect(() => Map.createMap("-1,1")).toThrowError("Coordinate cannot contain negative numbers")
     })
+
+    it("create a map with correct numbers", () => {
+        const map = Map.createMap("1,2")
+        expect(map.max_x).toBe(1)
+        expect(map.max_y).toBe(2)
+    })
 })
