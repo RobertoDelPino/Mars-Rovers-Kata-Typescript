@@ -49,6 +49,14 @@ describe('Mars Rover test', () => {
     expect(() => rover.execute("1,2,E|MMLMM|222")).toThrowError("Commands must contains just 2 lines")
   })
 
+  it("should throw error if first line doesnt contain two numbers and one direction letter", () => {
+    const map = Map.createMap("5,5");
+
+    const rover = new Rover(map);
+    
+    expect(() => rover.execute("1,2,X|MMLMM")).toThrowError("First command line must follow next structure: number, number, direction letter")
+  })
+
 });
 
 
