@@ -33,6 +33,14 @@ describe('Mars Rover test', () => {
   });
 
 
+  it("should throw error if commands are empty", () => {
+    const map = Map.createMap("5,5");
+
+    const rover = new Rover(map);
+    
+    expect(() => rover.execute("")).toThrowError("Commands cannot be empty")
+  })
+
 });
 
 
