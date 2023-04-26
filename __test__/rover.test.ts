@@ -65,6 +65,27 @@ describe('Mars Rover test', () => {
     expect(() => rover.execute("1,2,E|MMLMMX")).toThrowError("Letters from second line must contain L, R or M")
   })
 
+  it("should return object with correct data", () => {
+    const map = Map.createMap("5,5");
+
+    const rover = new Rover(map);
+
+    const expectedResult = {
+        starting_position : {
+          x: 1,
+          y: 2,
+          d: "E"
+        },
+        moving_command: ['M','M','L','M','M']
+      };
+
+    const result = rover.parseCommands("1,2,E|MMLMM")
+
+    expect(result).toEqual(expectedResult)
+  })
+
 });
+
+
 
 

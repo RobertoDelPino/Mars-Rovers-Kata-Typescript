@@ -39,7 +39,8 @@ export class Rover {
     }
 
     const secondLine = lines[1]
-    const letterIsNotMovementLetter = secondLine.split("").some(letter => !["L","R","M"].includes(letter))
+    const secondLineSplit = secondLine.split("")    
+    const letterIsNotMovementLetter = secondLineSplit.some(letter => !["L","R","M"].includes(letter))
     if(letterIsNotMovementLetter){
       throw new Error("Letters from second line must contain L, R or M")
     }
