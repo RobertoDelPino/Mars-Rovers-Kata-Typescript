@@ -8,10 +8,6 @@ import { Rover } from '../src/rover';
 
  Casos de uso ->
 
-  Para crear el mapa, string de una linea: "numero,numero"
-    1. Comprobar que son números
-    2. Comprobar que los números son mayores o iguales a 0
-
   Para crear un rovers se envía el mapa creado.
 
   Para ejecutar los comandos de un rovers, estos llegan como un string de dos lineas: posición y movimientos por hacer
