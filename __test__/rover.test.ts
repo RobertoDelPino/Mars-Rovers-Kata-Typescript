@@ -41,12 +41,12 @@ describe('Mars Rover test', () => {
     expect(() => rover.execute("")).toThrowError("Commands cannot be empty")
   })
 
-  it("should throw error if contain more than two lines", () => {
+  it("should throw error if doesnt contain two lines", () => {
     const map = Map.createMap("5,5");
 
     const rover = new Rover(map);
     
-    expect(() => rover.execute("1,2,E|MMLMM|222")).toThrowError("Can't contain more than two lines")
+    expect(() => rover.execute("1,2,E|MMLMM|222")).toThrowError("Commands must contains just 2 lines")
   })
 
 });

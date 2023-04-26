@@ -23,6 +23,11 @@ export class Rover {
       throw new Error("Commands cannot be empty")
     }
 
+    const lines = commands.split("|")
+    if(lines.length != 2){
+      throw new Error("Commands must contains just 2 lines")
+    }
+
     this.map.max_x
     return commands
   }
